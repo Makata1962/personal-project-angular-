@@ -1,10 +1,30 @@
 .container {
-    margin: 0 auto;
+    margin: 79px auto;
+    width: 1920px;
 }
 
 .sub-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-bottom: 79px;
+}
+
+.logo {
+width: 112px;
+height: 18px;
+left: calc(50% - 112px/2);
+top: 79px;
+margin-bottom: 216.54px;
+}
+
+
+.landing-image {
+width: 781px;
+height: 482px;
+left: 589px;
+top: 182px;
+margin-bottom: 123px;
 }
 
 button {
@@ -16,4 +36,14 @@ border-radius: 8px;
 padding: 18px 60px 18px 60px;
 justify-content: space-between;
 background: #62A1EB;
+
+font-family: Helvetica Neue;
+font-size: 20px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color: #fff;
+margin-bottom: 26px;
 }
+

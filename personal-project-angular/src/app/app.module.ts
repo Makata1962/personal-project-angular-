@@ -6,17 +6,16 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landingPage/landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
- import {MatButtonModule} from '@angular/material/button'; 
+ 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
