@@ -1,1 +1,50 @@
-<p>registration works!</p>
+<div class="container">
+    <div class="sub-container">
+        <div class="employee">
+            <form action="" class="form">
+                <div class="name-container">
+                    <div class="fname-container">
+                        <label for="fname">სახელი</label><br>
+                        <input class="fname" type="text" id="fname" name="fname"><br>
+                        <small>მინიმუმ ორი სიმბოლო, ქართული ასოები</small>
+                    </div>
+                    <div class="lname-container">
+                        <label for="lname">გვარი</label><br>
+                        <input class="lname" type="text" id="lname" name="lname">
+                        <small>მინიმუმ ორი სიმბოლო, ქართული ასოები</small>
+                    </div>
+                </div>
+                <div class="selector-container">
+                    <select name="team" id="team">
+                        <option value="development">დეველოპმენტი</option>
+                        <option value="hr">HR</option>
+                        <option value="sales">გაყიდვები</option>
+                        <option value="design">დიზაინი</option>
+                        <option value="marketing">მარკეტინგი</option>
+                    </select>
+                </div>
+                <div class="selector-container">
+                    <select name="position" id="position">
+                        <option value="development">პოზიცია</option>
+                        <option value="hr">HR</option>
+                        <option value="sales">გაყიდვები</option>
+                        <option value="design">დიზაინი</option>
+                        <option value="marketing">მარკეტინგი</option>
+                    </select>
+                </div>
+                <div class="email-container">
+                    <label for="email">მეილი</label>
+                    <input type="email" id="email" name="email">
+                    <small>უნდა მთავრდებოდეს @redberry.ge-ით</small>
+                </div>
+                <div class="phone-container">
+                    <label for="phone">ტელეფონის ნომერი</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    <small>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</small>
+                </div>
+
+            </form>
+            <button  class="next">შემდეგი</button>
+        </div>
+    </div>
+</div>
