@@ -1,0 +1,19 @@
+.container {
+    margin: 0 auto;
+}
+
+.sub-container {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+height: 60px;
+width: 387px;
+left: 766px;
+top: 787px;
+border-radius: 8px;
+padding: 18px 60px 18px 60px;
+justify-content: space-between;
+background: #62A1EB;
+}
