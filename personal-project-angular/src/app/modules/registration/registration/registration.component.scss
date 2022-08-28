@@ -1,111 +1,150 @@
 .container {
-    margin: 0 auto;
-    width: 1920;
+  margin: 0 auto;
 }
-
 .sub-container {
-    width: 1226px;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 96px;
+  background-color: rgb(224, 224, 224);
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 42px;
+}
 
+.header a {
+  text-decoration: none;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  color: #000;
+  font-size: 20px;
+  line-height: 24px;
+  margin-right: 66px;
+}
+
+.form-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 174px;
+  width: 878px;
+  border-radius: 8px;
+  background-color: #fff;
+}
 
 .name-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 65px;
 }
 
-.fname, .lname {
-width: 407px;
-height: 40px;
-font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 900;
-font-size: 18px;
-line-height: 21px;
-border-radius: 8px;
+.name-container .fname-container small,
+.name-container .lname-container small,
+small {
+  font-weight: 200;
+  color: grey;
+}
+
+.fname,
+.lname {
+  width: 407px;
+  height: 40px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  border-radius: 8px;
+  border: 0.3px solid rgb(55, 167, 241);
 }
 
 .fname-container {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .lname-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .fname-container small,
 .lname-container small {
-color: #2E2E2E;
-font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 300;
-font-size: 14px;
-line-height: 21px;
+  color: #2e2e2e;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
 
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
+  font-weight: 100;
 }
 
 .selector-container select {
-height: 60px;
-width: 878px;
-left: 24px;
-top: 8px;
-border-radius: 8px;
-font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 21px;
+  height: 60px;
+  width: 878px;
+  left: 24px;
+  top: 8px;
+  border-radius: 8px;
+  border: 0.3px solid rgb(55, 167, 241);
+
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 51px;
 }
 
 .email-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
 }
 
 .email-container input {
-width: 878px;
-height: 40px;
-border-radius: 8px;
-font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 21px;
+  width: 878px;
+  height: 40px;
+  border-radius: 8px;
+  border: 0.3px solid rgb(55, 167, 241);
+
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .phone-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .phone-container input {
-    width: 878px;
-    height: 40px;
-    border-radius: 8px;
-    font-family: 'Helvetica Neue';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-heighT: 21px;
+  width: 878px;
+  height: 40px;
+  border-radius: 8px;
+  border: 0.3px solid rgb(55, 167, 241);
+
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .next {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-padding: 18px 60px;
-gap: 20px;
-background-color: #62A1EB;
-border-radius: 8px;
-;
-position: absolute;
-width: 176px;
-height: 60px;
-right: 174px;
-top: 869px;
+  color: #fff;
+  font-size: 20px;
+  gap: 20px;
+  background-color: #62a1eb;
+  border-radius: 8px;
+  border: 0.3px solid rgb(55, 167, 241);
+  width: 176px;
+  height: 60px;
+  position: relative;
+  right: -709px;
+  top: 106px;
 }
