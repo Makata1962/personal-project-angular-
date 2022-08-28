@@ -148,3 +148,24 @@ small {
   right: -709px;
   top: 106px;
 }
+
+// Laptop Form
+
+.dropzone {
+  width: 878px;
+  height: 423px;
+  border: 1px solid rgb(73, 175, 235);
+  text-align: center;
+  line-height: 100px;
+}
+
+.upload {
+  color: #fff;
+  font-size: 20px;
+  gap: 20px;
+  background-color: #62a1eb;
+  border-radius: 8px;
+  border: 0.3px solid rgb(55, 167, 241);
+  width: 176px;
+  height: 60px;
+}

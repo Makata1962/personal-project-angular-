@@ -7,6 +7,8 @@ import { LandingComponent } from './landingPage/landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './modules/registration/registration/registration.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
  
@@ -21,6 +23,8 @@ import { RegistrationComponent } from './modules/registration/registration/regis
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
