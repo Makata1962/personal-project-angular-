@@ -7,22 +7,18 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
-  clickedOnEmployeeForm = false;
-  clickedOnLaptopForm = false;
+
   file: any;
+  clicked: boolean = false;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
 
-  onClickEmployee() {
-    this.clickedOnEmployeeForm =
-      !this.clickedOnEmployeeForm && !this.clickedOnLaptopForm;
-  }
-
-  onClickLaptop() {
-    this.clickedOnLaptopForm =
-      !this.clickedOnLaptopForm && !this.clickedOnEmployeeForm;
+  onClick() {
+    // this.clickedOnEmployeeForm =
+    //   !this.clickedOnEmployeeForm && !this.clickedOnLaptopForm;
+    return (this.clicked = true);
   }
 
   getFile(event: any) {
@@ -37,7 +33,6 @@ export class RegistrationComponent implements OnInit {
     //call API
     this.http
       .post('https://pcfy.redberryinternship.ge/api/teams', formData)
-      .subscribe((res) => {
-      });
+      .subscribe((res) => {});
   }
 }

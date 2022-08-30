@@ -135,7 +135,7 @@ small {
   line-height: 21px;
 }
 
-.next {
+.next, .save {
   color: #fff;
   font-size: 20px;
   gap: 20px;
@@ -154,9 +154,11 @@ small {
 .dropzone {
   width: 878px;
   height: 423px;
-  border: 1px solid rgb(73, 175, 235);
+  border: 1px dashed rgb(73, 175, 235);
   text-align: center;
   line-height: 100px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
 }
 
 .upload {
@@ -168,4 +170,93 @@ small {
   border: 0.3px solid rgb(55, 167, 241);
   width: 176px;
   height: 60px;
+}
+
+.laptopname,
+#laptopbrand,
+#cpu,
+.ram-input {
+  width: 407px;
+  height: 40px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  border-radius: 8px;
+  border: 0.3px solid rgb(55, 167, 241);
+}
+
+#laptopbrand {
+  margin-top: 20px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background-color: #c7c7c7;
+}
+
+.cpu-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+#cpu {
+  width: 277px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.cpu-input {
+  width: 277px;
+  height: 44px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  border-radius: 8px;
+  border: 0.3px solid rgb(55, 167, 241);
+}
+
+.radio-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ram-input-container {
+  margin-right: 50px;
+}
+.left-radio-button {
+  margin-right: 40px;
+}
+
+
+.date-input-container {
+  display: flex;
+  justify-content: space-between;
+}
+.date-input,
+.price-input {
+  width: 407px;
+  height: 40px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  border-radius: 8px;
+  border: 0.3px solid rgb(55, 167, 241);
+}
+
+
+.back{
+  color: rgb(55, 167, 241)
 }
