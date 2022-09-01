@@ -6,6 +6,11 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import {  ReactiveFormsModule } from '@angular/forms';
 
+//dropzone
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { NgxFileDropModule } from 'ngx-file-drop'
+
 
 @NgModule({
   declarations: [
@@ -15,7 +20,9 @@ import {  ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RegistrationRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    NgxFileDropModule
   ]
 })
 export class RegistrationModule { }

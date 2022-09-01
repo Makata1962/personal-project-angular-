@@ -7,45 +7,57 @@
             </div>
             <ng-container *ngIf="!clicked">
                 <div class="employee">
-                    <form action="" class="form">
+                    <form action="" class="form" [formGroup]="form">
                         <div class="name-container">
                             <div class="fname-container">
                                 <label for="fname">სახელი</label><br />
-                                <input class="fname" type="text" id="fname" name="fname" /><br />
+                                <input formControlName="firstname" class="fname" type="text" id="fname"
+                                    name="fname" /><br />
                                 <small>მინიმუმ ორი სიმბოლო, ქართული ასოები</small>
+                                <!-- <div [hidden]="firstname.valid || firstname.untouched">
+                                    <div>
+                                        The following problems have been found with the firstname:
+                                    </div>
+
+                                    <div [hidden]="!firstsname.hasError('minlength')">
+                                        Firstname can not be shorter than 5 characters.
+                                    </div>
+                                    <div [hidden]="!firstname.hasError('required')">
+                                        Firstname is required.
+                                    </div>
+                                </div> -->
                             </div>
                             <div class="lname-container">
                                 <label for="lname">გვარი</label><br />
-                                <input class="lname" type="text" id="lname" name="lname" />
+                                <input formControlName="lastname" class="lname" type="text" id="lname" name="lname" />
                                 <small>მინიმუმ ორი სიმბოლო, ქართული ასოები</small>
                             </div>
                         </div>
                         <div class="selector-container">
-                            <select name="team" id="team">
-                                <option value="development">დეველოპმენტი</option>
-                                <option value="hr">HR</option>
-                                <option value="sales">გაყიდვები</option>
-                                <option value="design">დიზაინი</option>
-                                <option value="marketing">მარკეტინგი</option>
+                            <select formControlName="team" name="team" id="team">
+                                <option value="">თიმი</option>
+                                <option *ngFor="let member of team" [ngValue]="member">
+                                    {{ member }}
+                                </option>
                             </select>
                         </div>
                         <div class="selector-container">
-                            <select name="position" id="position">
-                                <option value="development">პოზიცია</option>
-                                <option value="hr">HR</option>
-                                <option value="sales">გაყიდვები</option>
-                                <option value="design">დიზაინი</option>
-                                <option value="marketing">მარკეტინგი</option>
+                            <select formControlName="position" name="position" id="position">
+                                <option value="">პოზიცია</option>
+                                <option *ngFor="let position of positions" [ngValue]="position">
+                                    {{ position }}
+                                </option>
                             </select>
                         </div>
                         <div class="email-container">
                             <label for="email">მეილი</label>
-                            <input type="email" id="email" name="email" />
+                            <input formControlName="email" type="email" id="email" name="email" />
                             <small>უნდა მთავრდებოდეს @redberry.ge-ით</small>
                         </div>
                         <div class="phone-container">
                             <label for="phone">ტელეფონის ნომერი</label>
-                            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
+                            <input formControlName="phoneNumber" type="tel" id="phone" name="phone"
+                                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
                             <small>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</small>
                         </div>
                     </form>
@@ -53,10 +65,17 @@
                 <button class="next" (click)="onClick()">შემდეგი</button>
             </ng-container>
             <ng-container *ngIf="clicked">
-                <div class="dropzone" *ngIf="!file">
+                <!-- <div class="dropzone" *ngIf="!file">
                     <input (change)="getFile($event)" type="file" name="file" id="file">
                     <button (click)="uploadFile()" class="upload">ატვირთე</button>
+                </div> -->
+
+                <div class="center">
+                    <ngx-file-drop dropZoneLabel="ჩააგდე და ატვირთე" (onFileDrop)="dropped($event)">
+
+                    </ngx-file-drop>
                 </div>
+
                 <div class="name-container">
                     <div class="laptopname-container">
                         <label for="laptopname">სახელი</label><br />

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import {
   FormBuilder,
   FormControl,
@@ -7,14 +8,18 @@ import {
   Validators,
 } from '@angular/forms';
 
+import { NgxFileDropEntry } from 'ngx-file-drop';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
-  file: any;
   clicked: boolean = false;
+  public files: NgxFileDropEntry[] = [];
+  team = ['დეველოპმენტი', 'HR', 'გაყიდვები', 'დიზაინი', 'მარკეტინგი'];
+  positions = ['დეველოპმენტი', 'HR', 'გაყიდვები', 'დიზაინი', 'მარკეტინგი'];
 
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {}
 
@@ -58,18 +63,8 @@ export class RegistrationComponent implements OnInit {
     return (this.clicked = true);
   }
 
-  getFile(event: any) {
-    this.file = event.target.files[0];
-    console.log(this.file);
-  }
-
-  uploadFile() {
-    let formData = new FormData();
-    formData.set('file', this.file);
-
-    //call API
-    this.http
-      .post('https://pcfy.redberryinternship.ge/api/teams', formData)
-      .subscribe((res) => {});
+  dropped(files: NgxFileDropEntry[]) {
+    this.files = files;
+    console.log(this.files);
   }
 }

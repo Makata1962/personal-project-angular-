@@ -7,26 +7,25 @@ import { LandingComponent } from './landingPage/landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './modules/registration/registration/registration.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {  NgxFileDropModule } from 'ngx-file-drop';
 
 
  
 @NgModule({
-  declarations: [
-    AppComponent,
-    LandingComponent,
-    RegistrationComponent
-  ],
+  declarations: [AppComponent, LandingComponent, RegistrationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgxFileDropModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
