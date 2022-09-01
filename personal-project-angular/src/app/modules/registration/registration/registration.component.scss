@@ -159,6 +159,7 @@ small {
   line-height: 100px;
   background-color: #f7f7f7;
   border-radius: 8px;
+  margin-bottom: 80px;
 }
 
 .upload {
@@ -198,12 +199,14 @@ hr {
   height: 1px;
   border: none;
   background-color: #c7c7c7;
+  margin-bottom: 80px;
 }
 
 .cpu-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  margin-bottom: 79px;
 }
 
 #cpu {
@@ -233,6 +236,7 @@ hr {
 
 .ram-input-container {
   margin-right: 50px;
+  margin-bottom: 80px;
 }
 .left-radio-button {
   margin-right: 40px;
@@ -242,6 +246,7 @@ hr {
 .date-input-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 80px;
 }
 .date-input,
 .price-input {
@@ -258,5 +263,10 @@ hr {
 
 
 .back{
-  color: rgb(55, 167, 241)
+  color: rgb(55, 167, 241);
+  position: relative;
+  left: 0px;
+  top: 106px;
+
 }
+
