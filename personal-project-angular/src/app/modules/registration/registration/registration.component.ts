@@ -12,6 +12,8 @@ import { NgxFileDropEntry } from 'ngx-file-drop';
 import { ApiService } from 'src/app/services/api.service';
 import { subscribeOn } from 'rxjs';
 
+const formData = new FormData();
+
 interface Team {
   id: number;
   name: string;
@@ -67,6 +69,7 @@ export class RegistrationComponent implements OnInit {
   brands: Brands[] = [];
   cpus: Cpus[] = [];
   token: string = '4479704264a9c309e38267981be57000';
+  file: File | undefined = undefined;
 
   constructor(
     private http: HttpClient,
@@ -79,14 +82,13 @@ export class RegistrationComponent implements OnInit {
     this.showPositions();
     this.showBrands();
     this.showCpus();
-    this.showAllLeptops(); 
   }
 
   form = this.formBuilder.group({
     name: [''],
     surname: [''],
-    team_id: [{ id: 0, name: '' }],
-    position_id: [{ id: 0, name: '' }],
+    team_id: [{ id: null, name: '' }],
+    position_id: [{ id: null, name: '' }],
     email: [''], // should be end on @redberry.ge needs regex
     phone_number: [
       '',
@@ -94,11 +96,10 @@ export class RegistrationComponent implements OnInit {
     ], // უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს რეჯექსით
 
     laptop_image: [''],
-
     laptop_name: [''],
     laptop_brand_id: [{ id: 0, name: '' }],
-    laptop_cpu: [''],
-    laptop_cpu_cores: [0],
+    laptop_cpu: [{ id: null, name: '' }],
+    laptop_cpu_cores: [null],
     laptop_cpu_threads: [0],
     laptop_ram: [0],
     laptop_hard_drive_type: [''],
@@ -127,6 +128,10 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
+  onChange(event: any) {
+    this.file = event.target.files[0];
+  }
+
   showBrands() {
     this.api.getBrands().subscribe({
       next: (res) => {
@@ -143,41 +148,34 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  showAllLeptops() {
-    this.api.getAllLaptops().subscribe({
-      next:(res) => {
-        console.log(res);
-      }
-    })
-  }
-
-  showLaptop() {
-    this.api.getLaptop().subscribe({
-      next:(res)=> {
-        
-      }
-    })
-  }
-
   dropped(files: NgxFileDropEntry[]) {
     this.files = files;
     console.log(this.files);
   }
 
   fileUpload() {
-    const data = {
+    const data: any = {
       ...this.form.value,
       token: this.token,
-      team_id: this.form.value.team_id?.id ?? 0,
-      position_id: this.form.value.position_id?.id ?? 0,
-      laptop_brand_id: this.form.value.laptop_brand_id?.id ?? 0,
-    } as PostLaptop;
+      team_id: this.form.value.team_id?.id,
+      position_id: this.form.value.position_id?.id,
+      laptop_brand_id: this.form.value.laptop_brand_id?.id,
+      laptop_image: this.file,
+      laptop_cpu_threads: Number(this.form.value.laptop_cpu_threads),
+      laptop_cpu_cores: Number(this.form.value.laptop_cpu_cores),
+      laptop_cpu: this.form.value.laptop_cpu?.name,
+    };
 
-    
-    this.api.postLaptop(data).subscribe({
+    Object.keys(data).forEach((key) => {
+      formData.append(key, data[key]);
+    });
+
+    console.log(this.form.value);
+
+    this.api.postLaptop(formData).subscribe({
       next: (res) => {
         alert('Success');
-        console.log(res)
+        console.log(res);
         // this.form.reset();
       },
     });

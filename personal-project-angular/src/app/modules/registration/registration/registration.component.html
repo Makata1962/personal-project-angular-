@@ -34,7 +34,7 @@
                         </div>
                         <div class="selector-container">
                             <select formControlName="team_id" name="team" id="team">
-                                <option value="" [disabled]="disabled" >თიმი</option>
+                                <option value="" [disabled]="disabled">თიმი</option>
                                 <option *ngFor="let member of teams" [ngValue]="member">
                                     {{ member.name }}
                                 </option>
@@ -64,10 +64,11 @@
                 </ng-container>
                 <ng-container *ngIf="clicked">
                     <div class="dropzone">
-                        <ngx-file-drop formControlName="laptop_image" dropZoneLabel="ჩააგდე და ატვირთე"
+                        <input formControlName="laptop_image" type="file" (change)="onChange($event)" />
+                        <!-- <ngx-file-drop formControlName="laptop_image" dropZoneLabel="ჩააგდე და ატვირთე"
                             onFileDrop="dropped($event)">
                                 <button type="button">ატვირთე</button>
-                        </ngx-file-drop>
+                        </ngx-file-drop> -->
                     </div>
                     <div class="name-container">
                         <div class="laptopname-container">
@@ -118,10 +119,10 @@
                         <div class="radio-input-container">
                             <p>მეხსიერების ტიპი</p>
                             <input formControlName="laptop_hard_drive_type" type="radio" name="laptop_hard_drive_type"
-                                value="ssd">
+                                value="SSD">
                             <label class="left-radio-button" for="ssd">SSD</label>
                             <input formControlName="laptop_hard_drive_type" type="radio" name="laptop_hard_drive_type"
-                                value="hdd">
+                                value="HDD">
                             <label for="hdd">HDD</label>
                         </div>
 
@@ -142,7 +143,7 @@
                     </div>
                     <div class="radio-input-container">
                         <p>ლეპტოპის მდგომარეობა</p>
-                        <input formControlName="laptop_state" type="radio"  name="laptop_state" value="new">
+                        <input formControlName="laptop_state" type="radio" name="laptop_state" value="new">
                         <label class="left-radio-button" for="new">ახალი</label>
                         <input formControlName="laptop_state" type="radio" name="laptop_state" value="used">
                         <label for="used">მეორადი</label>

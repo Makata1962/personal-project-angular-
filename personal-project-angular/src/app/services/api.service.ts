@@ -33,20 +33,24 @@ export class ApiService {
     return this.http.get<any>(this.baseUrl + 'cpus');
   }
 
-  postLaptop(data: PostLaptop) {
+  postLaptop(data: FormData) {
     console.log('dataaa', data);
     return this.http.post<PostLaptop>(this.baseUrl + 'laptop/create', data, {
       headers: {
         accept: 'application/json',
-        'Content-Type': 'form-data/json',
       },
     });
   }
 
   getAllLaptops() {
-    return this.http.get(this.baseUrl + 'laptops')
+    return this.http.get(
+      this.baseUrl + 'laptops?token=4479704264a9c309e38267981be57000'
+    );
   }
-  getLaptop(){
-    return this.http.get(this.baseUrl + 'laptop/{id}')
+
+  getLaptop(id: number) {
+    return this.http.get(
+      this.baseUrl + 'laptop/{id}?token=4479704264a9c309e38267981be57000'
+    );
   }
 }

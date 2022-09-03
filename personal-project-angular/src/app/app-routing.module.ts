@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './landingPage/landing/landing.component';
+import { LandingComponent } from './landingPage/landing.component';
+import { ListComponent } from './modules/note-list/list/list.component';
 import { RegistrationComponent } from './modules/registration/registration/registration.component';
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path:'registration',
     component: RegistrationComponent
+  },
+  {
+    path:'noteList',
+    component: ListComponent
   }
 ];
 
