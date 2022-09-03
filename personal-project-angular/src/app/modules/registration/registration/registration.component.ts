@@ -79,6 +79,7 @@ export class RegistrationComponent implements OnInit {
     this.showPositions();
     this.showBrands();
     this.showCpus();
+    this.showAllLeptops(); 
   }
 
   form = this.formBuilder.group({
@@ -142,6 +143,22 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
+  showAllLeptops() {
+    this.api.getAllLaptops().subscribe({
+      next:(res) => {
+        console.log(res);
+      }
+    })
+  }
+
+  showLaptop() {
+    this.api.getLaptop().subscribe({
+      next:(res)=> {
+        
+      }
+    })
+  }
+
   dropped(files: NgxFileDropEntry[]) {
     this.files = files;
     console.log(this.files);
@@ -156,10 +173,11 @@ export class RegistrationComponent implements OnInit {
       laptop_brand_id: this.form.value.laptop_brand_id?.id ?? 0,
     } as PostLaptop;
 
+    
     this.api.postLaptop(data).subscribe({
       next: (res) => {
         alert('Success');
-        console.log(res);
+        console.log(res)
         // this.form.reset();
       },
     });

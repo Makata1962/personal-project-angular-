@@ -38,8 +38,15 @@ export class ApiService {
     return this.http.post<PostLaptop>(this.baseUrl + 'laptop/create', data, {
       headers: {
         accept: 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'form-data/json',
       },
     });
+  }
+
+  getAllLaptops() {
+    return this.http.get(this.baseUrl + 'laptops')
+  }
+  getLaptop(){
+    return this.http.get(this.baseUrl + 'laptop/{id}')
   }
 }

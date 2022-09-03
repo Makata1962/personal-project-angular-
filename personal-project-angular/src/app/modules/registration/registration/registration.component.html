@@ -34,7 +34,7 @@
                         </div>
                         <div class="selector-container">
                             <select formControlName="team_id" name="team" id="team">
-                                <option value="" [disabled]="disabled">თიმი</option>
+                                <option value="" [disabled]="disabled" >თიმი</option>
                                 <option *ngFor="let member of teams" [ngValue]="member">
                                     {{ member.name }}
                                 </option>
@@ -63,18 +63,12 @@
                     <button class="next" (click)="onClick()">შემდეგი</button>
                 </ng-container>
                 <ng-container *ngIf="clicked">
-                    <!-- <div class="dropzone" *ngIf="!file">
-                    <input (change)="getFile($event)" type="file" name="file" id="file">
-                    <button (click)="uploadFile()" class="upload">ატვირთე</button>
-                </div> -->
-
-                    <div class="center">
+                    <div class="dropzone">
                         <ngx-file-drop formControlName="laptop_image" dropZoneLabel="ჩააგდე და ატვირთე"
                             onFileDrop="dropped($event)">
-
+                                <button type="button">ატვირთე</button>
                         </ngx-file-drop>
                     </div>
-
                     <div class="name-container">
                         <div class="laptopname-container">
                             <label for="laptopname">სახელი</label><br />
@@ -116,16 +110,19 @@
                     </div>
                     <div class="radio-container">
                         <div class="ram-input-container">
-                            <!-- <label for="ram">ლეპტოპის RAM (GB)</label><br />
-                            <input formControlName="laptop_ram" class="ram-input" type="text" id="ram" name="ram" /><br />
-                            <small>მხოლოდ ციფრები</small> -->
+                            <label for="ram">ლეპტოპის RAM (GB)</label><br />
+                            <input formControlName="laptop_ram" class="ram-input" type="text" id="ram"
+                                name="ram" /><br />
+                            <small>მხოლოდ ციფრები</small>
                         </div>
                         <div class="radio-input-container">
                             <p>მეხსიერების ტიპი</p>
-                            <!-- <input formControlName="laptop_hard_drive_type" type="radio" id="ssd" name="ssd" value="ssd">
+                            <input formControlName="laptop_hard_drive_type" type="radio" name="laptop_hard_drive_type"
+                                value="ssd">
                             <label class="left-radio-button" for="ssd">SSD</label>
-                            <input formControlName="laptop_hard_drive_type" type="radio" id="hdd" name="hdd" value="hdd">
-                            <label for="hdd">HDD</label> -->
+                            <input formControlName="laptop_hard_drive_type" type="radio" name="laptop_hard_drive_type"
+                                value="hdd">
+                            <label for="hdd">HDD</label>
                         </div>
 
                     </div>
@@ -145,10 +142,10 @@
                     </div>
                     <div class="radio-input-container">
                         <p>ლეპტოპის მდგომარეობა</p>
-                        <!-- <input formControlName="laptop_state" type="radio" id="new" name="new" value="new">
+                        <input formControlName="laptop_state" type="radio"  name="laptop_state" value="new">
                         <label class="left-radio-button" for="new">ახალი</label>
-                        <input  formControlName="laptop_state" type="radio" id="used" name="hdd" value="used">
-                        <label for="used">მეორადი</label> -->
+                        <input formControlName="laptop_state" type="radio" name="laptop_state" value="used">
+                        <label for="used">მეორადი</label>
                     </div>
                     <div class="button-container">
                         <a type="button" class="back" (click)="onClick()">უკან</a>
