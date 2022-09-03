@@ -60,7 +60,7 @@
                             <small>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</small>
                         </div>
                     </div>
-                    <button class="next" (click)="onClick()">შემდეგი</button>
+                    <button class="next" (click)="onLocalStorageSave()">შემდეგი</button>
                 </ng-container>
                 <ng-container *ngIf="clicked">
                     <div class="dropzone">
@@ -149,7 +149,7 @@
                         <label for="used">მეორადი</label>
                     </div>
                     <div class="button-container">
-                        <a type="button" class="back" (click)="onClick()">უკან</a>
+                        <a type="button" class="back" (click)="changeClicked()">უკან</a>
                         <button type="button" class="save" (click)="fileUpload()">დამახსოვრება</button>
 
                     </div>

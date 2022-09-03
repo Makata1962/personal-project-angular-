@@ -11,6 +11,7 @@ import {
 import { NgxFileDropEntry } from 'ngx-file-drop';
 import { ApiService } from 'src/app/services/api.service';
 import { subscribeOn } from 'rxjs';
+import { getItem } from 'src/app/shared/local-storage';
 
 const formData = new FormData();
 
@@ -85,13 +86,13 @@ export class RegistrationComponent implements OnInit {
   }
 
   form = this.formBuilder.group({
-    name: [''],
-    surname: [''],
-    team_id: [{ id: null, name: '' }],
-    position_id: [{ id: null, name: '' }],
-    email: [''], // should be end on @redberry.ge needs regex
+    name: [getItem('name') ?? ''],
+    surname: [getItem('surname') ?? ''],
+    team_id: [getItem('team_id') && JSON.parse(getItem('team_id'))],
+    position_id: [getItem('position_id') && JSON.parse(getItem('position_id'))],
+    email: [getItem('email') ?? ''], // should be end on @redberry.ge needs regex
     phone_number: [
-      '',
+      getItem('phone_number') ?? '',
       // Validators.pattern('/^(+?995)?(79d{7}|5d{8})$'),
     ], // უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს რეჯექსით
 
@@ -108,8 +109,37 @@ export class RegistrationComponent implements OnInit {
     laptop_price: [0],
   });
 
-  onClick() {
+  onLocalStorageSave() {
+    this.form.value.name && localStorage.setItem('name', this.form.value.name);
+    this.form.value.surname &&
+      localStorage.setItem('surname', this.form.value.surname);
+    this.form.value.team_id?.id &&
+      localStorage.setItem(
+        'team_id',
+        JSON.stringify({
+          id: this.form.value.team_id?.id,
+          name: this.form.value.team_id?.name,
+        })
+      );
+    this.form.value.position_id?.id &&
+      this.form.value.position_id !== null &&
+      localStorage.setItem(
+        'position_id',
+        JSON.stringify({
+          id: this.form.value.position_id?.id,
+          name: this.form.value.position_id?.name,
+        })
+      );
+    this.form.value.email &&
+      localStorage.setItem('email', this.form.value.email);
+    this.form.value.phone_number &&
+      localStorage.setItem('phone_number', this.form.value.phone_number);
+
     return (this.clicked = !this.clicked);
+  }
+
+  changeClicked() {
+    this.clicked = !this.clicked;
   }
 
   showTeams() {
