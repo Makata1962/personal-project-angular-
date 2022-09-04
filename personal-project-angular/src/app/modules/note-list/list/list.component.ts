@@ -22,9 +22,7 @@ interface LaptopData {
 export class ListComponent implements OnInit {
   laptopData: any = []; // Laptop Data interface should be data type
   laptopImg: string[] = [];
-  // laptopName: string[] = [];
-  // userName: string[] = [];
-  // userSurname: string[] = [];
+  laptopInfo: any = [];
 
   constructor(private http: HttpClient, private api: ApiService) {}
 
@@ -36,13 +34,8 @@ export class ListComponent implements OnInit {
     this.api.getAllLaptops().subscribe({
       next: (res) => {
         this.laptopData = res;
-      // console.log(this.laptopData.data[0].laptop.image)
         for (let i = 0; i < this.laptopData.data.length; i++) {
-          this.laptopImg.push(this.laptopData.data[i].laptop.image)
-        //   this.laptopName.push(this.laptopData.data[i].laptop.name)
-        //   this.userName.push(this.laptopData.data[i].user.name)
-        //   this.userSurname.push(this.laptopData.data[i].user.surname)
-        
+          this.laptopImg.push(this.laptopData.data[i].laptop.image);
         }
       },
     });
@@ -51,7 +44,8 @@ export class ListComponent implements OnInit {
   showLaptop(id: number) {
     this.api.getLaptop(id).subscribe({
       next: (res) => {
-        console.log(res);
+        this.laptopInfo = res;
+        console.log(this.laptopInfo.data);
       },
     });
   }

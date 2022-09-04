@@ -1,15 +1,16 @@
 <div class="container">
     <div class="sub-container">
-        <div class="note-container" *ngFor="let i of laptopData.data">
+        <div class="note-container" *ngFor="let i of laptopData.data" >
+            <p>{{i.laptop.id}}</p>
             <div class="image-container">
                 <img alt="Laptop Image">
             </div>
             <div class="name-container">
-                <p class="name" >{{i.user.name}}</p>
+                <p class="name">{{i.user.name}}</p>
                 <p class="laptop-name">
                     {{i.laptop.name}}
                 </p>
-                <a href="" class="read-more">მეტის ნახვა</a>
+                <a routerLink="/laptopInfo"  class="read-more" (click)="showLaptop(i.laptop.id)">მეტის ნახვა</a>
             </div>
         </div>
     </div>

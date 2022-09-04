@@ -50,7 +50,7 @@ export class ApiService {
 
   getLaptop(id: number) {
     return this.http.get(
-      this.baseUrl + 'laptop/{id}?token=4479704264a9c309e38267981be57000'
+      this.baseUrl + 'laptop/'+ id.toString() +'?token=4479704264a9c309e38267981be57000'
     );
   }
 }
