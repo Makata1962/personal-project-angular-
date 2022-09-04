@@ -1,16 +1,96 @@
 <div class="container">
-    <div class="sub-container">
-        <div class="note-container" *ngFor="let i of laptopData.data" >
+    <div class="sub-container" *ngIf="clicked">
+        <div class="note-container" *ngFor="let i of laptopData.data">
             <p>{{i.laptop.id}}</p>
             <div class="image-container">
-                <img alt="Laptop Image">
+                <p class="img"></p>
             </div>
             <div class="name-container">
                 <p class="name">{{i.user.name}}</p>
                 <p class="laptop-name">
                     {{i.laptop.name}}
                 </p>
-                <a routerLink="/laptopInfo"  class="read-more" (click)="showLaptop(i.laptop.id)">მეტის ნახვა</a>
+                <a class="read-more" (click)="showLaptop(i.laptop.id)">მეტის ნახვა</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="laptopinfo-container" *ngIf="!clicked">
+        <div class="button-container">
+            <button type="button" (click)="goBack()"><</button>
+        </div>
+        <h1>ლეპტოპის ინფო</h1>
+        <div class="img-container">
+            <div>
+                <p class="img">Image</p>
+            </div>
+            <div class="employee-info">
+                <div class="title">
+                    <p>სახელი: </p>
+                    <p>თიმი: </p>
+                    <p>ილუსტრატორი: </p>
+                    <p>მეილი: </p>
+                    <p>ტელ. ნომერი: </p>
+                </div>
+                <div class="response">
+                    <p> {{laptopInfo.data.user.name}}</p>
+                    <p>{{laptopInfo.data.user.team_id}}</p>
+                    <p>{{laptopInfo.data.user.position_id}}</p>
+                    <p>{{laptopInfo.data.user.email}}</p>
+                    <p>{{laptopInfo.data.user.phone_number}}</p>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="laptop-characteristic">
+            <div class="first-column">
+                <div class="title">
+                    <p>ლეპტოპის სახელი: </p>
+                    <p>ლეპტოპის ბრენდი: </p>
+                    <p>RAM: </p>
+                    <p>მეხსიერების ტიპი: </p>
+                </div>
+                <div class="response">
+                    <p>{{laptopInfo.data.laptop.name}}</p>
+                    <p>{{laptopInfo.data.laptop.brand_id}}</p>
+                    <p>{{laptopInfo.data.laptop.ram}}</p>
+                    <p>{{laptopInfo.data.laptop.hard_drive_type}}</p>
+                </div>
+            </div>
+            <div class="second-column">
+                <div class="title">
+                    <p>CPU: </p>
+                    <p>CPU-ს ბირთვი: </p>
+                    <p>CPU-ს ნაკადი: </p>
+                </div>
+                <div class="response">
+                    <p>{{laptopInfo.data.laptop.cpu.name}}</p>
+                    <p>{{laptopInfo.data.laptop.cpu.cores}}</p>
+                    <p>{{laptopInfo.data.laptop.cpu.threads}}</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="laptop-condintion-container">
+            <div class="first-column">
+                <div class="title">
+                    <p>ლეპტოპის მდგომარეობა: </p>
+                    <p>ლეპტოპის ფასი: </p>
+                </div>
+                <div class="response">
+                    <p>{{laptopInfo.data.laptop.state}}</p>
+                    <p>{{laptopInfo.data.laptop.price | currency: "GEL " : 'symbol' : '1.0-0'}}</p>
+                </div>
+            </div>
+            <div class="second-column">
+                <div class="title">
+                    <p>შევსების რიცხვი: </p>
+                </div>
+                <div class="response">
+                    <p>{{laptopInfo.data.laptop.purchase_date}}</p>
+                </div>
             </div>
         </div>
     </div>

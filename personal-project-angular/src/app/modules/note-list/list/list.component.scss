@@ -16,7 +16,6 @@
   background-color: #aed1ea;
   border-radius: 20px;
   margin-bottom: 55px;
-  
 
   .name-container {
     display: flex;
@@ -24,10 +23,12 @@
     justify-content: center;
   }
 
-  img {
+  .img {
     width: 266px;
     height: 178px;
     margin: 14px 28px 13px 14px;
+    background-color: red;
+    border-radius: 8px;
   }
 
   .name,
@@ -47,5 +48,98 @@
 
   .read-more {
     font-size: 16px;
+  }
+}
+
+.background {
+  background-color: red;
+  width: 500px;
+  height: 500px;
+}
+
+.laptopinfo-container {
+  text-align: center;
+  hr {
+    background-color: #a5a5a5;
+    height: 1px;
+    border: none;
+    margin-bottom: 54px;
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .img {
+      width: 577px;
+      height: 342px;
+      border-radius: 8px;
+      margin-right: 68px;
+      margin-bottom: 84px;
+      background-color: aqua;
+    }
+    .employee-info {
+      display: flex;
+
+      .title {
+        text-align: start;
+        margin-right: 80px;
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 27px;
+        color: #2e2e2e;
+      }
+      .response {
+        text-align: start;
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 27px;
+        color: #797979;
+      }
+    }
+  }
+}
+
+.laptop-characteristic,
+.laptop-condintion-container {
+  display: flex;
+  justify-content: flex-start;
+
+  .first-column,
+  .second-column {
+    display: flex;
+    justify-content: space-around;
+    text-align: start;
+  }
+
+  .first-column {
+    margin-right: 211px;
+    .title {
+      margin-right: 88px;
+      margin-bottom: 77px;
+    }
+  }
+
+  .second-column .title {
+    margin-right: 67px;
+  }
+}
+
+.button-container {
+  display: flex;
+  position: relative;
+  left: -60px;
+  top: 40px;
+
+  button {
+    width: 40px;
+    height: 40px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
   }
 }

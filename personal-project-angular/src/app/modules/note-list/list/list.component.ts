@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 
 interface LaptopData {
@@ -23,6 +23,8 @@ export class ListComponent implements OnInit {
   laptopData: any = []; // Laptop Data interface should be data type
   laptopImg: string[] = [];
   laptopInfo: any = [];
+  clicked: boolean = true;
+  number: number = 5;
 
   constructor(private http: HttpClient, private api: ApiService) {}
 
@@ -48,5 +50,10 @@ export class ListComponent implements OnInit {
         console.log(this.laptopInfo.data);
       },
     });
+    this.clicked = !this.clicked;
+  }
+
+  goBack() {
+    this.clicked = !this.clicked;
   }
 }

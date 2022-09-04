@@ -9,13 +9,11 @@ import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './modules/registration/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {  NgxFileDropModule } from 'ngx-file-drop';
 import { ListComponent } from './modules/note-list/list/list.component';
-
 
  
 @NgModule({
-  declarations: [AppComponent, LandingComponent, RegistrationComponent, ListComponent],
+  declarations: [AppComponent, LandingComponent, RegistrationComponent, ListComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,7 +22,6 @@ import { ListComponent } from './modules/note-list/list/list.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxFileDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
