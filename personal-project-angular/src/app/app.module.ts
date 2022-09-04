@@ -10,11 +10,12 @@ import { RegistrationComponent } from './modules/registration/registration/regis
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {  NgxFileDropModule } from 'ngx-file-drop';
+import { ListComponent } from './modules/note-list/list/list.component';
 
 
  
 @NgModule({
-  declarations: [AppComponent, LandingComponent, RegistrationComponent],
+  declarations: [AppComponent, LandingComponent, RegistrationComponent, ListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

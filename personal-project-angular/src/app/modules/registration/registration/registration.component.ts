@@ -206,7 +206,7 @@ export class RegistrationComponent implements OnInit {
       next: (res) => {
         alert('Success');
         console.log(res);
-        // this.form.reset();
+        this.form.reset();
       },
     });
   }

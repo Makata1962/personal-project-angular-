@@ -1,0 +1,51 @@
+.container {
+  margin: 0 auto;
+  width: 1192px;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.note-container {
+  display: flex;
+  width: 563px;
+  height: 205px;
+  background-color: #aed1ea;
+  border-radius: 20px;
+  margin-bottom: 55px;
+  
+
+  .name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  img {
+    width: 266px;
+    height: 178px;
+    margin: 14px 28px 13px 14px;
+  }
+
+  .name,
+  .laptop-name,
+  .read-more {
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .laptop-name,
+  .read-more {
+    font-weight: 400;
+  }
+
+  .read-more {
+    font-size: 16px;
+  }
+}
