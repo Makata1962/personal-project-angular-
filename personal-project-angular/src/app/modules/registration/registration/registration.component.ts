@@ -64,6 +64,7 @@ export interface PostLaptop {
 export class RegistrationComponent implements OnInit {
   disabled: boolean = true;
   clicked: boolean = false;
+  page: string = 'თანამშრომლის ინფო';
   public files: NgxFileDropEntry[] = [];
   teams: Team[] = [];
   positions: Positions[] = [];
@@ -101,12 +102,12 @@ export class RegistrationComponent implements OnInit {
     laptop_brand_id: [{ id: 0, name: '' }],
     laptop_cpu: [{ id: null, name: '' }],
     laptop_cpu_cores: [null],
-    laptop_cpu_threads: [0],
-    laptop_ram: [0],
+    laptop_cpu_threads: [null],
+    laptop_ram: [null],
     laptop_hard_drive_type: [''],
     laptop_state: [''],
     laptop_purchase_date: [''],
-    laptop_price: [0],
+    laptop_price: [null],
   });
 
   onLocalStorageSave() {
@@ -135,11 +136,13 @@ export class RegistrationComponent implements OnInit {
     this.form.value.phone_number &&
       localStorage.setItem('phone_number', this.form.value.phone_number);
 
-    return (this.clicked = !this.clicked);
+    this.clicked = !this.clicked;
+    this.page = 'ლეპტოპის ინფო';
   }
 
   changeClicked() {
     this.clicked = !this.clicked;
+    this.page = 'თანამშრომლის ინფო';
   }
 
   showTeams() {

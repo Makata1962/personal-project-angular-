@@ -3,8 +3,7 @@
         <div class="form-container">
             <form class="form" [formGroup]="form">
                 <div class="header">
-                    <a> თანამშრომლის ინფო</a>
-                    <a>ლეპტოპის მახასიათებლები</a>
+                    <a class="page"> {{page}}</a>
                 </div>
                 <ng-container *ngIf="!clicked">
                     <div class="employee">
@@ -63,106 +62,113 @@
                     <button class="next" (click)="onLocalStorageSave()">შემდეგი</button>
                 </ng-container>
                 <ng-container *ngIf="clicked">
-                    <div class="dropzone">
-                        <label for="inputTag">
-                            <div class="text">
-                                ჩააგდე ან ატვირთე <br>
-                                ლეპტოპის ფოტო
+                    <div class="second-page">
+
+                        <div class="dropzone">
+                            <label for="inputTag">
+                                <div class="text">
+                                    ჩააგდე ან ატვირთე <br>
+                                    ლეპტოპის ფოტო
+                                </div>
+
+                                <div class="upload-button-container">
+                                    <p class="upload-text">
+                                        ატვირთე
+                                    </p>
+                                    <input id="inputTag" formControlName="laptop_image" type="file"
+                                        (change)="onChange($event)" />
+                                </div>
+                            </label>
+                        </div>
+                        <div class="name-container">
+                            <div class="laptopname-container">
+                                <label for="laptopname">სახელი</label><br />
+                                <input formControlName="laptop_name" class="laptopname" type="text" id="laptopname"
+                                    name="laptopname" /><br />
+                                <small>ლათინური ასოები, ციფრები, !@#$%^&*()_+=</small>
+                            </div>
+                            <div class="laptopname-container">
+                                <select formControlName="laptop_brand_id" name="laptop_brand_id" id="laptopbrand">
+                                    <option value="" [disabled]="disabled">ლეპტოპის ბრენდი</option>
+                                    <option *ngFor="let brand of brands" [ngValue]="brand">
+                                        {{ brand.name }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="cpu-container">
+                            <div class="cpu-selector-container">
+                                <select formControlName="laptop_cpu" name="cpu" id="cpu">
+                                    <option value="" [disabled]="disabled">CPU</option>
+                                    <option *ngFor="let cpu of cpus" [ngValue]="cpu">
+                                        {{ cpu.name }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="cpu-input-container">
+                                <label for="cpu-input">CPU-ს ბირთვი</label><br />
+                                <input formControlName="laptop_cpu_cores" class="cpu-input" type="text" id="cpu-input"
+                                    name="cpu-input" /><br />
+                                <small>მხოლოდ ციფრები</small>
+                            </div>
+                            <div class="cpu-input-container">
+                                <label for="cpu-input">CPU-ს ნაკადი</label><br />
+                                <input formControlName="laptop_cpu_threads" class="cpu-input" type="text" id="cpu-input"
+                                    name="cpu-input" /><br />
+                                <small>მხოლოდ ციფრები</small>
+                            </div>
+                        </div>
+                        <div class="radio-container">
+                            <div class="ram-input-container">
+                                <label for="ram">ლეპტოპის RAM (GB)</label><br />
+                                <input formControlName="laptop_ram" class="ram-input" type="text" id="ram"
+                                    name="ram" /><br />
+                                <small>მხოლოდ ციფრები</small>
+                            </div>
+                            <div class="radio-input-container">
+                                <p>მეხსიერების ტიპი</p>
+                                <input formControlName="laptop_hard_drive_type" type="radio"
+                                    name="laptop_hard_drive_type" value="SSD">
+                                <label class="left-radio-button" for="ssd">SSD</label>
+                                <input formControlName="laptop_hard_drive_type" type="radio"
+                                    name="laptop_hard_drive_type" value="HDD">
+                                <label for="hdd">HDD</label>
                             </div>
 
-                            <div class="upload-button-container">
-                                <p class="upload-text">
-                                    ატვირთე
-                                </p>
-
-                                <input id="inputTag" formControlName="laptop_image" type="file"
-                                    (change)="onChange($event)" />
+                        </div>
+                        <hr>
+                        <div class="date-input-container">
+                            <div>
+                                <label for="date-input">შეძენის რიცხვი (არჩევით)</label><br />
+                                <input formControlName="laptop_purchase_date" class="date-input" type="date"
+                                    id="date-input" name="date-input" placeholder="დდ / თთ / წწწწ" /><br />
                             </div>
-                        </label>
-                    </div>
-                    <div class="name-container">
-                        <div class="laptopname-container">
-                            <label for="laptopname">სახელი</label><br />
-                            <input formControlName="laptop_name" class="laptopname" type="text" id="laptopname"
-                                name="laptopname" /><br />
-                            <small>ლათინური ასოები, ციფრები, !@#$%^&*()_+=</small>
-                        </div>
-                        <div class="laptopname-container">
-                            <select formControlName="laptop_brand_id" name="laptop_brand_id" id="laptopbrand">
-                                <option value="" [disabled]="disabled">ლეპტოპის ბრენდი</option>
-                                <option *ngFor="let brand of brands" [ngValue]="brand">
-                                    {{ brand.name }}
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="cpu-container">
-                        <div class="cpu-selector-container">
-                            <select formControlName="laptop_cpu" name="cpu" id="cpu">
-                                <option value="" [disabled]="disabled">CPU</option>
-                                <option *ngFor="let cpu of cpus" [ngValue]="cpu">
-                                    {{ cpu.name }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="cpu-input-container">
-                            <label for="cpu-input">CPU-ს ბირთვი</label><br />
-                            <input formControlName="laptop_cpu_cores" class="cpu-input" type="text" id="cpu-input"
-                                name="cpu-input" /><br />
-                            <small>მხოლოდ ციფრები</small>
-                        </div>
-                        <div class="cpu-input-container">
-                            <label for="cpu-input">CPU-ს ნაკადი</label><br />
-                            <input formControlName="laptop_cpu_threads" class="cpu-input" type="text" id="cpu-input"
-                                name="cpu-input" /><br />
-                            <small>მხოლოდ ციფრები</small>
-                        </div>
-                    </div>
-                    <div class="radio-container">
-                        <div class="ram-input-container">
-                            <label for="ram">ლეპტოპის RAM (GB)</label><br />
-                            <input formControlName="laptop_ram" class="ram-input" type="text" id="ram"
-                                name="ram" /><br />
-                            <small>მხოლოდ ციფრები</small>
+                            <div>
+                                <label for="price-input">ლეპტოპის ფასი</label><br />
+                                <input formControlName="laptop_price" class="price-input" type="number" id="price-input"
+                                    name="price-input" /><br />
+                                <small>მხოლოდ ციფრები</small>
+                            </div>
                         </div>
                         <div class="radio-input-container">
-                            <p>მეხსიერების ტიპი</p>
-                            <input formControlName="laptop_hard_drive_type" type="radio" name="laptop_hard_drive_type"
-                                value="SSD">
-                            <label class="left-radio-button" for="ssd">SSD</label>
-                            <input formControlName="laptop_hard_drive_type" type="radio" name="laptop_hard_drive_type"
-                                value="HDD">
-                            <label for="hdd">HDD</label>
+                            <div>
+                                <p>ლეპტოპის მდგომარეობა</p>
+                            </div>
+                            <div class="input-option-container">
+                                <input formControlName="laptop_state" type="radio" name="laptop_state" value="new">
+                                <label class="left-radio-button" for="new">ახალი</label>
+                                <input formControlName="laptop_state" type="radio" name="laptop_state" value="used">
+                                <label for="used">მეორადი</label>
+                            </div>
                         </div>
+                        <div class="button-container">
+                            <a type="button" class="back" (click)="changeClicked()">უკან</a>
+                            <button type="button" class="save" (click)="fileUpload()">დამახსოვრება</button>
 
-                    </div>
-                    <hr>
-                    <div class="date-input-container">
-                        <div>
-                            <label for="date-input">შეძენის რიცხვი (არჩევით)</label><br />
-                            <input formControlName="laptop_purchase_date" class="date-input" type="date" id="date-input"
-                                name="date-input" placeholder="დდ / თთ / წწწწ" /><br />
-                        </div>
-                        <div>
-                            <label for="price-input">ლეპტოპის ფასი</label><br />
-                            <input formControlName="laptop_price" class="price-input" type="number" id="price-input"
-                                name="price-input" /><br />
-                            <small>მხოლოდ ციფრები</small>
                         </div>
                     </div>
-                    <div class="radio-input-container">
-                        <p>ლეპტოპის მდგომარეობა</p>
-                        <input formControlName="laptop_state" type="radio" name="laptop_state" value="new">
-                        <label class="left-radio-button" for="new">ახალი</label>
-                        <input formControlName="laptop_state" type="radio" name="laptop_state" value="used">
-                        <label for="used">მეორადი</label>
-                    </div>
-                    <div class="button-container">
-                        <a type="button" class="back" (click)="changeClicked()">უკან</a>
-                        <button type="button" class="save" (click)="fileUpload()">დამახსოვრება</button>
 
-                    </div>
                 </ng-container>
             </form>
         </div>
