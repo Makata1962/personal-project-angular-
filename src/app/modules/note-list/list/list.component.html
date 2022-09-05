@@ -3,7 +3,7 @@
         <div class="note-container" *ngFor="let i of laptopData.data">
             <!-- <p>{{i.laptop.id}}</p> -->
             <div class="image-container">
-                <p class="img"></p>
+                <img class="img" src='{{ "https://pcfy.redberryinternship.ge/" + i.laptop.image }}' alt="" />
             </div>
             <div class="name-container">
                 <p class="name">{{i.user.name}}</p>
@@ -16,12 +16,13 @@
     </div>
     <div class="laptopinfo-container" *ngIf="!clicked">
         <div class="button-container">
-            <button type="button" (click)="goBack()"><</button>
+            <button type="button" (click)="goBack()">
+            </button>
         </div>
         <h1>ლეპტოპის ინფო</h1>
         <div class="img-container">
             <div>
-                <p class="img">Image</p>
+                <img class="img" src='{{ "https://pcfy.redberryinternship.ge/" + laptopInfo.data.laptop.image }}' />
             </div>
             <div class="employee-info">
                 <div class="title">
