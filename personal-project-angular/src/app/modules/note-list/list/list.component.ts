@@ -24,7 +24,6 @@ export class ListComponent implements OnInit {
   laptopImg: string[] = [];
   laptopInfo: any = [];
   clicked: boolean = true;
-  number: number = 5;
 
   constructor(private http: HttpClient, private api: ApiService) {}
 
@@ -47,7 +46,6 @@ export class ListComponent implements OnInit {
     this.api.getLaptop(id).subscribe({
       next: (res) => {
         this.laptopInfo = res;
-        console.log(this.laptopInfo.data);
       },
     });
     this.clicked = !this.clicked;

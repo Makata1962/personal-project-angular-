@@ -64,11 +64,21 @@
                 </ng-container>
                 <ng-container *ngIf="clicked">
                     <div class="dropzone">
-                        <input formControlName="laptop_image" type="file" (change)="onChange($event)" />
-                        <!-- <ngx-file-drop formControlName="laptop_image" dropZoneLabel="ჩააგდე და ატვირთე"
-                            onFileDrop="dropped($event)">
-                                <button type="button">ატვირთე</button>
-                        </ngx-file-drop> -->
+                        <label for="inputTag">
+                            <div class="text">
+                                ჩააგდე ან ატვირთე <br>
+                                ლეპტოპის ფოტო
+                            </div>
+
+                            <div class="upload-button-container">
+                                <p class="upload-text">
+                                    ატვირთე
+                                </p>
+
+                                <input id="inputTag" formControlName="laptop_image" type="file"
+                                    (change)="onChange($event)" />
+                            </div>
+                        </label>
                     </div>
                     <div class="name-container">
                         <div class="laptopname-container">
