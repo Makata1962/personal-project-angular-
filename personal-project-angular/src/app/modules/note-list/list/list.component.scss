@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     a {
       color: blue;
       text-decoration: underline;
@@ -146,5 +146,100 @@
     height: 40px;
     background-color: #d9d9d9;
     border-radius: 50%;
+  }
+}
+
+@media (max-width: 390px) {
+  .container {
+    width: 390px;
+  }
+
+  .note-container {
+    display: flex;
+    width: 358px;
+    height: 123px;
+    background-color: #aed1ea;
+    border-radius: 20px;
+    margin-bottom: 55px;
+
+    .img {
+      width: 164px;
+      height: 109px;
+      margin: 7px;
+      background-color: red;
+      border-radius: 8px;
+    }
+  }
+
+  .laptopinfo-container {
+    width: 390px;
+
+    .img-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .img {
+        width: 358px;
+        height: 191px;
+      }
+
+      .employee-info {
+        width: 358px;
+        .title,
+        .response {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .laptop-characteristic {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 330px;
+
+    .first-column {
+      margin-right: 0px;
+      div {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .second-column {
+      width: 330px;
+      div {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .laptop-condintion-container {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .first-column {
+      margin-right: 0px;
+      width: 330px;
+      .title {
+        margin-right: 10px;
+        margin-bottom: 0px;
+      }
+
+      .second-column {
+        width: 330px;
+        .title {
+          margin-right: 0px;
+        }
+      }
+    }
   }
 }

@@ -1,49 +1,96 @@
 .container {
-    margin: 79px auto;
-    width: 1920px;
+  margin: 79px auto;
+  width: 1920px;
 }
 
 .sub-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 79px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 79px;
 }
 
 .logo {
-width: 112px;
-height: 18px;
-left: calc(50% - 112px/2);
-top: 79px;
-margin-bottom: 216.54px;
+  width: 112px;
+  height: 18px;
+  left: calc(50% - 112px / 2);
+  top: 79px;
+  margin-bottom: 216.54px;
 }
 
-
 .landing-image {
-width: 781px;
-height: 482px;
-left: 589px;
-top: 182px;
-margin-bottom: 123px;
+  width: 781px;
+  height: 482px;
+  left: 589px;
+  top: 182px;
+  margin-bottom: 123px;
 }
 
 button {
-height: 60px;
-width: 387px;
-left: 766px;
-top: 787px;
-border-radius: 8px;
-padding: 18px 60px 18px 60px;
-justify-content: space-between;
-background: #62A1EB;
+  height: 60px;
+  width: 387px;
+  left: 766px;
+  top: 787px;
+  border-radius: 8px;
+  padding: 18px 60px 18px 60px;
+  justify-content: space-between;
+  background: #62a1eb;
 
-font-family: Helvetica Neue;
-font-size: 20px;
-font-weight: 500;
-line-height: 24px;
-letter-spacing: 0em;
-text-align: center;
-color: #fff;
-margin-bottom: 26px;
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 26px;
 }
 
+@media (max-width: 390px) {
+  .container {
+    margin: 79px auto;
+    width: 390px;
+  }
+
+  .sub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    width: 112px;
+    height: 18px;
+    left: calc(50% - 112px / 2);
+    top: 79px;
+    margin-bottom: 50px;
+  }
+
+  .landing-image {
+    width: 370px;
+    height: auto;
+    left: 589px;
+    top: 182px;
+    margin-bottom: 123px;
+  }
+
+  button {
+    width: 358px;
+    height: 60px;
+    left: 766px;
+    top: 787px;
+    border-radius: 8px;
+    padding: 18px 60px 18px 60px;
+    justify-content: space-between;
+    background: #62a1eb;
+
+    font-family: Helvetica Neue;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 26px;
+  }
+}
