@@ -1,0 +1,59 @@
+{
+  "employeeList": [
+    {
+      "name": "ზახარიჩი",
+      "age": 65,
+      "id": 6
+    },
+    {
+      "name": "ქათამაძე",
+      "age": 40,
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullname": "Ilia",
+      "email": "ipach17@freeuni.edu.ge",
+      "website": "fb.com",
+      "phoneNumber": 592102793,
+      "password": "password"
+    },
+    {
+      "fullname": "Koka Makhaldiani",
+      "email": "koka@gmail.com",
+      "phoneNumber": 599112233,
+      "password": "password",
+      "id": 2
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "phoneNumber": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "fullname": "Koka Makhaldiani",
+      "email": "ipach17@freeuni.edu.ge",
+      "phoneNumber": "+995592102793",
+      "password": "password",
+      "id": 4
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "phoneNumber": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "phoneNumber": "",
+      "password": "",
+      "id": 6
+    }
+  ]
+}

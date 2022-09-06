@@ -10,10 +10,12 @@ import { RegistrationComponent } from './modules/registration/registration/regis
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './modules/note-list/list/list.component';
+import { AuthentificationComponent } from './auth/authentification.component';
+import { SingupComponent } from './singup/singup.component';
 
  
 @NgModule({
-  declarations: [AppComponent, LandingComponent, RegistrationComponent, ListComponent, ],
+  declarations: [AppComponent, LandingComponent, RegistrationComponent, ListComponent, AuthentificationComponent, SingupComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,

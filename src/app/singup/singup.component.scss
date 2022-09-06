@@ -1,0 +1,68 @@
+.container {
+    width: 1920px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;  
+    margin-bottom: 200px;       
+}
+
+.sub-container {
+    margin-top: 10px;
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    box-shadow: 0px 2px 14px 0px #000000;
+    border-radius:  8px;
+    // background: linear-gradient(
+    //     90deg,
+    //     hsla(205, 46%, 30%, 1) 0%,
+    //     hsla(260, 29%, 36%, 1) 100%
+    // );
+    
+  background: #2193b0; /* fallback for old browsers */
+  background: linear-gradient(to right, #2193b0, #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+ 
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        color: #fff;
+    }
+
+    .input-container {
+        padding: 20px;
+        margin-bottom: 20px;
+        
+        .email, .password, .fullname, .phoneNumber {
+            width: 468px;
+            height: 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .registration{
+            width: 475px;
+            height: 60px;
+            background-color: purple;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 20px;
+       }
+    }
+
+    p {
+        text-align: center; 
+        font-size: 16px;
+        color:#fff;
+    }
+
+    p:hover {
+        text-decoration: underline;
+        color: purple
+
+    }
+}

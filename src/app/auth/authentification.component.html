@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="sub-container">
+        <h1>გამარჯობა</h1>
+        <form [formGroup]="loginForm">
+            <div class="input-container">
+                <input formControlName="email" class="email" placeholder="მეილი" type="email">
+                <input formControlName="password" class="password" placeholder="პაროლი" type="password">
+                <button type="button" class="login">შესვლა</button>
+            </div>
+            <p routerLink="/signup" routerLinkActive="router-link-active">რეგისტრაცია</p>
+        </form>
+    </div>
+</div>

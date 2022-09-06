@@ -1,0 +1,16 @@
+
+<div class="container">
+    <div class="sub-container">
+        <h1>რეგისტრაცია</h1>
+        <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+            <div class="input-container">
+                <input formControlName="fullname" class="fullname" placeholder="სახელი და გვარი" type="text">
+                <input formControlName="email" class="email" placeholder="მეილი" type="email">
+                <input formControlName="phoneNumber" class="phoneNumber" placeholder="მობილურის ნომერი" type="text">
+                <input formControlName="password" class="password" placeholder="პაროლი" type="password">
+                <button type="submit" class="registration">რეგისტრაცია</button>
+            </div>
+            <p routerLink="/" routerLinkActive="router-link-active">უკვე დარეგისტრირებული ხარ? შესვლა</p>
+        </form>
+    </div>
+</div>
