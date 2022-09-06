@@ -30,8 +30,8 @@ export class AuthentificationComponent implements OnInit {
   ngOnInit(): void {
 
     this.loginForm = this.formBuilder.group({
-      email: [''],
-      password: [''],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 
@@ -47,15 +47,14 @@ export class AuthentificationComponent implements OnInit {
         });
         if (user) {
           this.auth.login();
-          alert('Login Success');
+          // alert('Login Success');
           this.loginForm.reset();
           this.router.navigate(['/landingpage']);
         } else {
-          alert('user not found');
+          alert('თქვენ დარეგისტრირებული არ ხართ, გთხოვთ დარეგისტრირდეთ!');
         }
       },
       error: (err) => alert(`${err.message}`),
     });
   }
-
 }

@@ -1,16 +1,4 @@
 {
-  "employeeList": [
-    {
-      "name": "ზახარიჩი",
-      "age": 65,
-      "id": 6
-    },
-    {
-      "name": "ქათამაძე",
-      "age": 40,
-      "id": 7
-    }
-  ],
   "users": [
     {
       "id": 1,
@@ -28,13 +16,6 @@
       "id": 2
     },
     {
-      "fullname": "",
-      "email": "",
-      "phoneNumber": "",
-      "password": "",
-      "id": 3
-    },
-    {
       "fullname": "Koka Makhaldiani",
       "email": "ipach17@freeuni.edu.ge",
       "phoneNumber": "+995592102793",
@@ -42,18 +23,32 @@
       "id": 4
     },
     {
-      "fullname": "",
-      "email": "",
-      "phoneNumber": "",
-      "password": "",
-      "id": 5
+      "fullname": "Soso Egadze",
+      "email": "sosoegadze@mail.ru",
+      "phoneNumber": "+995899381417",
+      "password": "sosoegadze",
+      "id": 8
     },
     {
-      "fullname": "",
-      "email": "",
-      "phoneNumber": "",
+      "fullname": "Irakli Shukakidze",
+      "email": "ishukakidze@gmail.com",
+      "phoneNumber": "+995592102793",
       "password": "",
-      "id": 6
+      "id": 9
+    },
+    {
+      "fullname": "Ilia",
+      "email": "ipach17@freeuni.edu.ge",
+      "phoneNumber": "+995592102793",
+      "password": "password",
+      "id": 10
+    },
+    {
+      "fullname": "Ilia",
+      "email": "ipach17@freeuni.edu.ge",
+      "phoneNumber": "456",
+      "password": "1234",
+      "id": 11
     }
   ]
 }
