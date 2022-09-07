@@ -4,11 +4,7 @@ import { combineLatest } from 'rxjs';
 import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
-//  {
-//   path:'registration',
-//   component:RegistrationComponent
-//  }
-
+  
 ];
 
 @NgModule({

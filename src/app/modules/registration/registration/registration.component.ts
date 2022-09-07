@@ -148,7 +148,6 @@ export class RegistrationComponent implements OnInit {
   showTeams() {
     this.api.getTeams().subscribe({
       next: (res) => {
-        console.log(this.teams,'showTeams');
         this.teams = res.data;
       },
     });

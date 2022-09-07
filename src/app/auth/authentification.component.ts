@@ -47,7 +47,7 @@ export class AuthentificationComponent implements OnInit {
         });
         if (user) {
           this.auth.login();
-          // alert('Login Success');
+          alert('Login Success');
           this.loginForm.reset();
           this.router.navigate(['/landingpage']);
         } else {
