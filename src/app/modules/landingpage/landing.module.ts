@@ -5,6 +5,7 @@ import { LandingRoutingModule } from './landing-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import { HeaderComponent } from 'src/app/shared/sharedcomponents/header/header.component';
 import { RegistrationModule } from '../registration/registration.module';
+import { SharedcomponentsModule } from 'src/app/shared/sharedcomponents.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { RegistrationModule } from '../registration/registration.module';
   imports: [
     CommonModule,
     LandingRoutingModule,
-    RegistrationModule
+    RegistrationModule,
+    SharedcomponentsModule
   ]
 })
 export class LandingModule { }

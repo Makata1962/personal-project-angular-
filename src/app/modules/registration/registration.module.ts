@@ -9,7 +9,7 @@ import {  ReactiveFormsModule } from '@angular/forms';
 //dropzone
 import { FormsModule } from '@angular/forms';
 import { NgxFileDropModule } from 'ngx-file-drop'
-import { HeaderComponent } from 'src/app/shared/sharedcomponents/header/header.component';
+import { SharedcomponentsModule } from 'src/app/shared/sharedcomponents.module';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { HeaderComponent } from 'src/app/shared/sharedcomponents/header/header.c
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxFileDropModule
+    NgxFileDropModule,
+    SharedcomponentsModule
   ]
 })
 export class RegistrationModule { }

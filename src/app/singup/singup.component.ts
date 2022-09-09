@@ -19,10 +19,10 @@ export class SingupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
-      fullname: ['', Validators.required],
-      email: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
-      password: ['', Validators.required],
+      fullname: [null, Validators.required],
+      email: [null, Validators.required],
+      phoneNumber: [null, Validators.required],
+      password: [null, Validators.required, Validators.minLength(8)],
     });
   }
 
@@ -34,7 +34,6 @@ export class SingupComponent implements OnInit {
       )
       .subscribe({
         next: () => {
-          alert('Signup Successfully');
           this.signupForm.reset();
           this.router.navigate(['/']);
         },

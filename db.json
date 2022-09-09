@@ -51,11 +51,19 @@
       "id": 11
     },
     {
-      "fullname": "",
-      "email": "",
-      "phoneNumber": "",
+      "fullname": "Mariam Maisuradze",
+      "email": "mmais15@agruuni.edu.ge",
+      "phoneNumber": "+995599381417",
+      "password": "password",
+      "id": 13
+    },
+   
+    {
+      "fullname": "Ilia Pachulia",
+      "email": "ipach17@freeuni.edu.ge",
+      "phoneNumber": "+995592102793",
       "password": "",
-      "id": 12
+      "id": 18
     }
   ]
 }

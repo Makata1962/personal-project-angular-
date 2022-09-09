@@ -11,7 +11,7 @@ import {
 import { NgxFileDropEntry } from 'ngx-file-drop';
 import { ApiService } from 'src/app/services/api.service';
 import { subscribeOn } from 'rxjs';
-import { getItem } from 'src/app/shared/local-storage';
+import { getItem } from 'src/app/shared/localstorage/local-storage';
 
 const formData = new FormData();
 
@@ -72,7 +72,9 @@ export class RegistrationComponent implements OnInit {
   cpus: Cpus[] = [];
   token: string = '4479704264a9c309e38267981be57000';
   file: File | undefined = undefined;
-
+  teamSelected!:string;
+  listPositions!: any;
+  listPositionsData = [];
   constructor(
     private http: HttpClient,
     private formBuilder: FormBuilder,
@@ -82,7 +84,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.showTeams();
     this.showPositions();
-    this.showBrands();
+    this.showBrands()
     this.showCpus();
   }
 
@@ -153,6 +155,18 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
+
+  // showPositions(team_id: any) {
+  //   console.log(team_id, 'id');
+  //   this.api.getPositionsOfSelectedTeams(team_id).subscribe(
+  //     res => {  
+  //       let data  =JSON.stringify(res);
+  //       this.listPositions = JSON.parse(data) 
+  //       console.log(this.listPositions.data);
+  //     }
+  //   )
+  // }
+
   showPositions() {
     this.api.getPositions().subscribe({
       next: (res) => {
@@ -207,7 +221,7 @@ export class RegistrationComponent implements OnInit {
 
     this.api.postLaptop(formData).subscribe({
       next: (res) => {
-        alert('Success');
+        alert('Laptop information successfully saved');
         console.log(res);
         this.form.reset();
       },

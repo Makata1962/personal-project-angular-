@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthentificationComponent } from './auth/authentification.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LandingComponent } from './modules/landingpage/landing/landing.component';
-import { ListComponent } from './modules/note-list/list/list.component';
-import { RegistrationComponent } from './modules/registration/registration/registration.component';
 import { SingupComponent } from './singup/singup.component';
 
 const routes: Routes = [

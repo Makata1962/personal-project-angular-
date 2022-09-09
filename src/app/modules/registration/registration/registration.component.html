@@ -1,5 +1,4 @@
 <div class="container">
-    <!-- <app-header></app-header> -->
     <div class="sub-container">
         <div class="form-container">
             <form class="form" [formGroup]="form">
@@ -17,7 +16,6 @@
                                     <div>
                                         The following problems have been found with the firstname:
                                     </div>
-
                                     <div [hidden]="!firstsname.hasError('minlength')">
                                         Firstname can not be shorter than 5 characters.
                                     </div>
@@ -39,6 +37,14 @@
                                     {{ member.name }}
                                 </option>
                             </select>
+
+                            <!-- <select formControlName="team_id" [(ngModel)]="teamSelected"
+                                (ngModelChange)="showPositions($event)" name="team" id="team">
+                                <option value="">თიმი</option>
+                                <option *ngFor="let member of teams" [value]="member.id">
+                                    {{ member.name }}
+                                </option>
+                            </select> -->
                         </div>
                         <div class="selector-container">
                             <select formControlName="position_id" name="position" id="position">
@@ -47,6 +53,12 @@
                                     {{ position.name }}
                                 </option>
                             </select>
+                            <!-- <select formControlName="position_id" name="position" id="position">
+                                <option value="">პოზიცია</option>
+                                <option *ngFor="let position of listPositions.data" [value]="position.id">
+                                    {{ position.name}}
+                                </option>
+                            </select> -->
                         </div>
                         <div class="email-container">
                             <label for="email">მეილი</label>

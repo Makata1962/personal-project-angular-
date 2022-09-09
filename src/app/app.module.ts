@@ -19,7 +19,7 @@ import { RegistrationModule } from './modules/registration/registration.module';
 
  
 @NgModule({
-  declarations: [AppComponent, AuthentificationComponent, SingupComponent, HeaderComponent],
+  declarations: [AppComponent, AuthentificationComponent, SingupComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,7 +30,8 @@ import { RegistrationModule } from './modules/registration/registration.module';
     FormsModule,
     LandingModule,
     ListModule,
-     RegistrationModule
+    RegistrationModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
