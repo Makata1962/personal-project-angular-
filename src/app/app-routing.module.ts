@@ -17,7 +17,7 @@ const routes: Routes = [
 
   {
     path: 'landingpage',
-    canActivate: [AuthGuard],
+    canLoad:[AuthGuard],
     loadChildren: () =>
     import('./modules/landingpage/landing.module').then((m) => m.LandingModule
     ),

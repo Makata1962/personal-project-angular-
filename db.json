@@ -1,69 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
-      "fullname": "Ilia",
-      "email": "ipach17@freeuni.edu.ge",
-      "website": "fb.com",
-      "phoneNumber": 592102793,
-      "password": "password"
-    },
-    {
-      "fullname": "Koka Makhaldiani",
-      "email": "koka@gmail.com",
-      "phoneNumber": 599112233,
-      "password": "password",
-      "id": 2
-    },
-    {
-      "fullname": "Koka Makhaldiani",
-      "email": "ipach17@freeuni.edu.ge",
-      "phoneNumber": "+995592102793",
-      "password": "password",
-      "id": 4
-    },
-    {
-      "fullname": "Soso Egadze",
-      "email": "sosoegadze@mail.ru",
-      "phoneNumber": "+995899381417",
-      "password": "sosoegadze",
-      "id": 8
-    },
-    {
-      "fullname": "Irakli Shukakidze",
-      "email": "ishukakidze@gmail.com",
-      "phoneNumber": "+995592102793",
-      "password": "",
-      "id": 9
-    },
-    {
-      "fullname": "Ilia",
-      "email": "ipach17@freeuni.edu.ge",
-      "phoneNumber": "+995592102793",
-      "password": "password",
-      "id": 10
-    },
-    {
-      "fullname": "Ilia",
-      "email": "ipach17@freeuni.edu.ge",
-      "phoneNumber": "456",
-      "password": "1234",
-      "id": 11
-    },
-    {
-      "fullname": "Mariam Maisuradze",
-      "email": "mmais15@agruuni.edu.ge",
-      "phoneNumber": "+995599381417",
-      "password": "password",
-      "id": 13
-    },
-   
-    {
       "fullname": "Ilia Pachulia",
       "email": "ipach17@freeuni.edu.ge",
       "phoneNumber": "+995592102793",
-      "password": "",
-      "id": 18
+      "password": "password",
+      "id": 1
     }
   ]
 }

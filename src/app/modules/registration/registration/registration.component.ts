@@ -2,59 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
+  FormBuilder
 } from '@angular/forms';
 
 import { NgxFileDropEntry } from 'ngx-file-drop';
 import { ApiService } from 'src/app/services/api.service';
-import { subscribeOn } from 'rxjs';
 import { getItem } from 'src/app/shared/localstorage/local-storage';
+import { Team, Positions, Brands, Cpus } from 'src/app/shared/interfaces/interfaces';
+import { Router } from '@angular/router';
 
 const formData = new FormData();
-
-interface Team {
-  id: number;
-  name: string;
-}
-
-interface Positions {
-  id: number;
-  name: string;
-  teams_id: number;
-}
-export interface Brands {
-  id: number;
-  name: string;
-}
-
-interface Cpus {
-  id: number;
-  name: string;
-}
-
-export interface PostLaptop {
-  name: string;
-  surname: string;
-  team_id: number;
-  position_id: number;
-  phone_number: string;
-  email: string;
-  token: string;
-  laptop_name: string;
-  laptop_image: string;
-  laptop_brand_id: number;
-  laptop_cpu: string;
-  laptop_cpu_cores: number;
-  laptop_cpu_threads: number;
-  laptop_ram: number;
-  laptop_hard_drive_type: string;
-  laptop_state: string;
-  laptop_purchase_date?: string;
-  laptop_price: number;
-}
 
 @Component({
   selector: 'app-registration',
@@ -73,12 +30,12 @@ export class RegistrationComponent implements OnInit {
   token: string = '4479704264a9c309e38267981be57000';
   file: File | undefined = undefined;
   teamSelected!:string;
-  listPositions!: any;
-  listPositionsData = [];
+  sorteredPositions: Positions[]= []
   constructor(
     private http: HttpClient,
     private formBuilder: FormBuilder,
-    private api: ApiService
+    private api: ApiService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -93,11 +50,10 @@ export class RegistrationComponent implements OnInit {
     surname: [getItem('surname') ?? ''],
     team_id: [getItem('team_id') && JSON.parse(getItem('team_id'))],
     position_id: [getItem('position_id') && JSON.parse(getItem('position_id'))],
-    email: [getItem('email') ?? ''], // should be end on @redberry.ge needs regex
+    email: [getItem('email') ?? ''],
     phone_number: [
-      getItem('phone_number') ?? '',
-      // Validators.pattern('/^(+?995)?(79d{7}|5d{8})$'),
-    ], // უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს რეჯექსით
+      getItem('phone_number') ?? ''
+    ], 
 
     laptop_image: [''],
     laptop_name: [''],
@@ -139,6 +95,7 @@ export class RegistrationComponent implements OnInit {
       localStorage.setItem('phone_number', this.form.value.phone_number);
 
     this.clicked = !this.clicked;
+    console.log(this.form.value.team_id.id)
     this.page = 'ლეპტოპის ინფო';
   }
 
@@ -151,21 +108,14 @@ export class RegistrationComponent implements OnInit {
     this.api.getTeams().subscribe({
       next: (res) => {
         this.teams = res.data;
+
       },
     });
   }
 
-
-  // showPositions(team_id: any) {
-  //   console.log(team_id, 'id');
-  //   this.api.getPositionsOfSelectedTeams(team_id).subscribe(
-  //     res => {  
-  //       let data  =JSON.stringify(res);
-  //       this.listPositions = JSON.parse(data) 
-  //       console.log(this.listPositions.data);
-  //     }
-  //   )
-  // }
+  renderPositions(team_id: any) {
+    this.sorteredPositions = this.positions.filter(el => el.team_id === team_id.id)
+  }
 
   showPositions() {
     this.api.getPositions().subscribe({
@@ -191,22 +141,17 @@ export class RegistrationComponent implements OnInit {
     this.api.getCpus().subscribe({
       next: (res) => {
         this.cpus = res.data;
-      },
+       },
     });
-  }
-
-  dropped(files: NgxFileDropEntry[]) {
-    this.files = files;
-    console.log(this.files);
   }
 
   fileUpload() {
     const data: any = {
       ...this.form.value,
       token: this.token,
-      team_id: this.form.value.team_id?.id,
-      position_id: this.form.value.position_id?.id,
-      laptop_brand_id: this.form.value.laptop_brand_id?.id,
+      team_id: Number(this.form.value.team_id?.id),
+      position_id:Number( this.form.value.position_id?.id),
+      laptop_brand_id: Number(this.form.value.laptop_brand_id?.id),
       laptop_image: this.file,
       laptop_cpu_threads: Number(this.form.value.laptop_cpu_threads),
       laptop_cpu_cores: Number(this.form.value.laptop_cpu_cores),
@@ -224,7 +169,9 @@ export class RegistrationComponent implements OnInit {
         alert('Laptop information successfully saved');
         console.log(res);
         this.form.reset();
+        this.router.navigate(['landingpage'])
       },
     });
+    localStorage.clear();
   }
 }

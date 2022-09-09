@@ -3,13 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { SignUpResponse } from '../shared/interfaces/interfaces';
 
-export type SignUpResponse = {
-  fullname?: string;
-  email?: string;
-  phoneNumber?: string;
-  password?: string;
-};
+
 
 @Component({
   selector: 'app-authentification',

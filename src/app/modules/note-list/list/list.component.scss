@@ -63,7 +63,8 @@
 
 .laptopinfo-container {
   text-align: center;
-  background-color: #7A86F2;
+  background-color: grey
+
   hr {
     background-color: #a5a5a5;
     height: 1px;
@@ -140,11 +141,8 @@
   left: -60px;
   top: 40px;
 
-  button {
-    width: 40px;
-    height: 40px;
-    background-color: #d9d9d9;
-    border-radius: 50%;
+  .back {
+   color: blue;
   }
 }
 

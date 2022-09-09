@@ -17,8 +17,8 @@
     </div>
     <div class="laptopinfo-container" *ngIf="!clicked">
         <div class="button-container">
-            <button type="button" (click)="goBack()">
-            </button>
+            <p class="back" (click)="goBack()">უკან
+            </p>
         </div>
         <h1>ლეპტოპის ინფო</h1>
         <div class="img-container">
@@ -29,14 +29,14 @@
                 <div class="title">
                     <p>სახელი: </p>
                     <p>თიმი: </p>
-                    <p>ილუსტრატორი: </p>
+                    <p>პოზიცია: </p>
                     <p>მეილი: </p>
                     <p>ტელ. ნომერი: </p>
                 </div>
                 <div class="response">
                     <p>{{laptopInfo.data.user.name}}</p>
-                    <p>{{laptopInfo.data.user.team_id}}</p>
-                    <p>{{laptopInfo.data.user.position_id}}</p>
+                    <p>{{this.team}}</p>
+                    <p>{{this.position}}</p>
                     <p>{{laptopInfo.data.user.email}}</p>
                     <p>{{laptopInfo.data.user.phone_number}}</p>
                 </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="response">
                     <p>{{laptopInfo.data.laptop.name}}</p>
-                    <p>{{laptopInfo.data.laptop.brand_id}}</p>
+                    <p>{{this.brand}}</p>
                     <p>{{laptopInfo.data.laptop.ram}}</p>
                     <p>{{laptopInfo.data.laptop.hard_drive_type}}</p>
                 </div>

@@ -7,7 +7,7 @@ import { RegistrationComponent } from '../registration/registration/registration
 const routes: Routes = [
   {
     path: 'registration',
-    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: () =>
     import('../registration/registration.module').then((m) => m.RegistrationModule
     ),
@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'notelist',
-    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: () =>
     import('../note-list/list.module').then((m) => m.ListModule
     ),

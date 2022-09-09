@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SignUpResponse } from '../auth/authentification.component';
+import { SignUpResponse } from '../shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-singup',

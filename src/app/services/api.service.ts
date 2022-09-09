@@ -1,10 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import {
-  Brands,
-  PostLaptop,
-} from '../modules/registration/registration/registration.component';
+import { Brands, PostLaptop } from '../shared/interfaces/interfaces';
 
 interface BrandsRequest {
   data: Brands[];
@@ -20,13 +16,6 @@ export class ApiService {
   getTeams() {
     return this.http.get<any>(this.baseUrl + 'teams');
   }
-
-
-// getPositionsOfSelectedTeams(team_id: string) {
-//   let parameter1 = new HttpParams().set('team_id', team_id);
-//   return this.http.get(this.baseUrl + 'positions', {params: parameter1})
-// }
-
   
   getPositions() {
     return this.http.get<any>(this.baseUrl + 'positions');

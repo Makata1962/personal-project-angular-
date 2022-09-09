@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container">
     <div class="sub-container">
         <div class="form-container">
@@ -12,17 +13,7 @@
                                 <label for="fname">სახელი</label><br />
                                 <input formControlName="name" class="fname" type="text" id="fname" name="fname" /><br />
                                 <small>მინიმუმ ორი სიმბოლო, ქართული ასოები</small>
-                                <!-- <div [hidden]="firstname.valid || firstname.untouched">
-                                    <div>
-                                        The following problems have been found with the firstname:
-                                    </div>
-                                    <div [hidden]="!firstsname.hasError('minlength')">
-                                        Firstname can not be shorter than 5 characters.
-                                    </div>
-                                    <div [hidden]="!firstname.hasError('required')">
-                                        Firstname is required.
-                                    </div>
-                                </div> -->
+                                
                             </div>
                             <div class="lname-container">
                                 <label for="lname">გვარი</label>
@@ -31,34 +22,23 @@
                             </div>
                         </div>
                         <div class="selector-container">
-                            <select formControlName="team_id" name="team" id="team">
+                            <select formControlName="team_id" name="team" id="team"
+                                (ngModelChange)="renderPositions($event)">
                                 <option value="" [disabled]="disabled">თიმი</option>
                                 <option *ngFor="let member of teams" [ngValue]="member">
                                     {{ member.name }}
                                 </option>
                             </select>
 
-                            <!-- <select formControlName="team_id" [(ngModel)]="teamSelected"
-                                (ngModelChange)="showPositions($event)" name="team" id="team">
-                                <option value="">თიმი</option>
-                                <option *ngFor="let member of teams" [value]="member.id">
-                                    {{ member.name }}
-                                </option>
-                            </select> -->
                         </div>
                         <div class="selector-container">
                             <select formControlName="position_id" name="position" id="position">
                                 <option value="" [disabled]="disabled">პოზიცია</option>
-                                <option *ngFor="let position of positions" [ngValue]="position">
+                                <option *ngFor="let position of sorteredPositions" [ngValue]="position">
                                     {{ position.name }}
                                 </option>
                             </select>
-                            <!-- <select formControlName="position_id" name="position" id="position">
-                                <option value="">პოზიცია</option>
-                                <option *ngFor="let position of listPositions.data" [value]="position.id">
-                                    {{ position.name}}
-                                </option>
-                            </select> -->
+                          
                         </div>
                         <div class="email-container">
                             <label for="email">მეილი</label>
